@@ -13,17 +13,17 @@ app.use(cors());
 app.use('/api',routes)
 
 /////////////////////
-const fs  = require("fs")
-const path = require("path");
-let mongoCA = fs.readFileSync(
-    path.join(__dirname, "ssl", process.env.MONGO_CA)
-),
-    mongoClient = fs.readFileSync(
-        path.join(__dirname, "ssl", process.env.MONGO_CLIENT)
-    ),
-    mongoKey = fs.readFileSync(
-        path.join(__dirname, "ssl", process.env.MONGO_CLIENT)
-    );
+// const fs  = require("fs")
+// const path = require("path");
+// let mongoCA = fs.readFileSync(
+//     path.join(__dirname, "ssl", process.env.MONGO_CA)
+// ),
+//     mongoClient = fs.readFileSync(
+//         path.join(__dirname, "ssl", process.env.MONGO_CLIENT)
+//     ),
+//     mongoKey = fs.readFileSync(
+//         path.join(__dirname, "ssl", process.env.MONGO_CLIENT)
+//     );
 ////////////////////////////delete this ssl from mongo option env and ssl folder
 
 let mongoOptions = {
@@ -31,9 +31,9 @@ let mongoOptions = {
     useUnifiedTopology: true,
 
     /////
-    sslCA: mongoCA,
-    sslCert : mongoClient,
-    sslKey : mongoKey
+    // sslCA: mongoCA,
+    // sslCert : mongoClient,
+    // sslKey : mongoKey
     /////
 }
 
